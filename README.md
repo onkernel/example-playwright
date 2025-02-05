@@ -1,0 +1,14 @@
+# Playwright Example Implementation
+
+This example shows how to connect to Kernel's remote browsers to run web automations. Follow these steps to run it:
+
+1. Run `cp EXAMPLE_ENV .env`
+2. Replace "your-api-key" with the Kernel API key provided to you
+3. Run `npm install`
+3. Run `tsx src/demo.ts` to run the exmaple automation. The automation starts a new browser, navigates to Hacker News, clicks the first link, and enters "Hello world!" into the comment box.
+4. When you run `tsx src/demo.ts`, it will print a Kernel url that you can visit in your browser. This allows you to watch the automation run in real time.
+5. Typically, browser sessions are closed when you call `browser.close()` in Playwright. For the purposes of this demo, we leave it open. You can use the remote GUI that you visited in (4) to manually drive the web browser. Try clicking on other links or visiting a different website.
+7. Enter `close` in your terminal when you are done, so the browser closes (this calls `browser.close()`).
+
+## Demo
+See a demo of this working [here](https://screen.studio/share/xVNPJsdM)
