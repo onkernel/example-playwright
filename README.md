@@ -9,6 +9,3 @@ This example shows how to connect to Kernel's remote browsers to run web automat
 4. When you run `tsx src/demo.ts`, it will `console.log()` a Kernel url that you can visit in your browser. This allows you to watch the automation run in real time.
 5. Typically, browser sessions are closed when you call `browser.close()` in Playwright. For the purposes of this demo, we leave leave the session open after the automation ends. You can use the remote GUI that you navigated to in (4) to manually drive the web browser. Try clicking on other links or visiting a different website.
 7. Enter `close` in your terminal when you are done, so the browser closes (this calls `browser.close()`).
-
-## Demo
-See a demo of this working [here](https://screen.studio/share/xVNPJsdM)
