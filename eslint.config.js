@@ -6,26 +6,29 @@ import prettierConfig from 'eslint-config-prettier';
 export default [
   eslint.configs.recommended,
   {
-    files: ['**/*.{ts,mts,cts}'],
+    files: ['**/*.{ts,tsx,mts,cts}'],
     languageOptions: {
       parser: tsparser,
       parserOptions: {
         project: './tsconfig.json',
-        ecmaVersion: 2022,
+        ecmaVersion: 2025,
         sourceType: 'module',
+        jsx: true,
+      },
+      globals: {
+        console: 'readonly',
+        process: 'readonly',
+        fetch: 'readonly',
+        global: 'readonly',
       },
     },
     plugins: {
       '@typescript-eslint': tseslint,
     },
     rules: {
-      // TypeScript specific rules
       '@typescript-eslint/explicit-function-return-type': 'warn',
       '@typescript-eslint/no-explicit-any': 'warn',
       '@typescript-eslint/no-unused-vars': ['error', { argsIgnorePattern: '^_' }],
-
-      // General rules
-      'no-console': 'warn',
     },
   },
   prettierConfig,

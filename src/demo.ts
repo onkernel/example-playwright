@@ -1,6 +1,8 @@
 import { chromium } from 'playwright';
 import dotenv from 'dotenv';
 import readline from 'readline';
+import { type Browser } from 'playwright';
+
 dotenv.config();
 
 // Create readline interface for demo purposes
@@ -9,9 +11,9 @@ const rl = readline.createInterface({
   output: process.stdout,
 });
 
-let browser;
+let browser: Browser | undefined;
 
-(async () => {
+(async (): Promise<void> => {
   try {
     // https://docs.onkernel.com/api-reference/create-browser-session
     const response = await fetch('https://api.onkernel.com/browser', {
@@ -83,6 +85,7 @@ let browser;
   }
 })();
 
+// Handle CTRL+C signal
 process.on('SIGINT', async () => {
   if (browser) {
     await browser.close();
