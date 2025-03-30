@@ -25,7 +25,7 @@ By participating in this project, you are expected to uphold our [Code of Conduc
 
 3. **Make your changes**
    - Write your code following our coding standards
-   - Ensure all tests pass: `npm test`
+   - Ensure all tests pass
    - Add tests for new functionality
 
 4. **Commit your changes**
