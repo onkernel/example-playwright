@@ -1,7 +1,8 @@
 {
   "type": "module",
   "scripts": {
-    "lint": "eslint . --ext .ts --fix",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
     "format": "prettier --write \"**/*.{ts,js,json,md}\""
   },
   "dependencies": {

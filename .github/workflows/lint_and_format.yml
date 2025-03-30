@@ -1,0 +1,22 @@
+name: Lint the repository
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  lint-frontend:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install packages
+        run: npm install
+      - name: Run prettier
+        run: npm run format
+      - name: Run eslint
+        run: npm run lint
