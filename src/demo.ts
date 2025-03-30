@@ -1,4 +1,4 @@
-import { chromium } from "playwright";
+import { chromium } from 'playwright';
 import dotenv from 'dotenv';
 import readline from 'readline';
 dotenv.config();
@@ -6,7 +6,7 @@ dotenv.config();
 // Create readline interface for demo purposes
 const rl = readline.createInterface({
   input: process.stdin,
-  output: process.stdout
+  output: process.stdout,
 });
 
 let browser;
@@ -14,17 +14,15 @@ let browser;
 (async () => {
   try {
     // https://docs.onkernel.com/api-reference/create-browser-session
-    const response = await fetch("https://api.onkernel.com/browser", {
-      method: "POST",
+    const response = await fetch('https://api.onkernel.com/browser', {
+      method: 'POST',
       headers: {
         Authorization: `Bearer ${process.env.KERNEL_API_KEY}`,
       },
     });
     if (response.status !== 200) {
       throw new Error(
-        `Failed to retrieve browser instance: ${
-          response.statusText
-        } ${await response.text()}`
+        `Failed to retrieve browser instance: ${response.statusText} ${await response.text()}`,
       );
     }
     const { cdp_ws_url, remote_url } = await response.json();
@@ -52,36 +50,35 @@ let browser;
 
     // Playwright automation
     // The waitForTimeouts are primarily to slow down the automation for demo purposes
-    console.log("Navigating to Hacker News...");
-    await page.goto("https://news.ycombinator.com", { waitUntil: 'networkidle' });
+    console.log('Navigating to Hacker News...');
+    await page.goto('https://news.ycombinator.com', { waitUntil: 'networkidle' });
     await page.waitForTimeout(2000);
 
     // Find and click the comments link for the first story
-    console.log("Clicking comments link for first story...");
+    console.log('Clicking comments link for first story...');
     await page.locator('.athing + tr a:has-text("comments")').first().click();
     await page.waitForTimeout(1000);
-  
+
     // Find and fill the comment field
-    console.log("Looking for comment field...");
+    console.log('Looking for comment field...');
     try {
       const commentField = await page.locator('textarea[name="text"]');
-      await commentField.evaluate(element => {
+      await commentField.evaluate((element) => {
         element.style.backgroundColor = 'lightyellow';
       });
       await page.waitForTimeout(1000);
 
-      console.log("Typing comment...");
-      await commentField.type("Hello world!", { delay: 100 }); // Slow typing
+      console.log('Typing comment...');
+      await commentField.type('Hello world!', { delay: 100 }); // Slow typing
       await page.waitForTimeout(2000);
     } catch (error) {
-      console.log("Comment field not found!", error);
+      console.log('Comment field not found!', error);
     }
 
-    console.log("Action sequence completed!");
+    console.log('Action sequence completed!');
     console.log("Type 'close' to close the browser");
-
   } catch (error) {
-    console.error("Error:", error);
+    console.error('Error:', error);
     rl.close();
   }
 })();

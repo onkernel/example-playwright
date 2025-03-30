@@ -1,4 +1,9 @@
 {
+  "type": "module",
+  "scripts": {
+    "lint": "eslint . --ext .ts --fix",
+    "format": "prettier --write \"**/*.{ts,js,json,md}\""
+  },
   "dependencies": {
     "dotenv": "^16.4.7",
     "playwright": "^1.49.1",
@@ -7,6 +12,11 @@
   },
   "devDependencies": {
     "@types/node": "^22.10.7",
-    "@types/ws": "^8.5.13"
+    "@types/ws": "^8.5.13",
+    "@typescript-eslint/eslint-plugin": "^8.28.0",
+    "@typescript-eslint/parser": "^8.28.0",
+    "eslint": "^9.23.0",
+    "eslint-config-prettier": "^10.1.1",
+    "prettier": "^3.5.3"
   }
 }
