@@ -11,12 +11,15 @@ By participating in this project, you are expected to uphold our [Code of Conduc
 ## Development Workflow
 
 1. **Fork the repository**
+
    - Fork the repository on GitHub to your personal account
    - Clone your fork locally: `git clone https://github.com/YOUR_USERNAME/example-playwright.git`
    - Add upstream remote: `git remote add upstream https://github.com/original/example-playwright.git`
 
 2. **Create a new branch**
+
    - Always branch from the up-to-date main branch
+
    ```bash
    git checkout main
    git pull upstream main
@@ -24,11 +27,13 @@ By participating in this project, you are expected to uphold our [Code of Conduc
    ```
 
 3. **Make your changes**
+
    - Write your code following our coding standards
    - Ensure all tests pass
    - Add tests for new functionality
 
 4. **Commit your changes**
+
    - Use clear and meaningful commit messages
    - Follow conventional commits format: `type(scope): message`
    - Example: `feat(api): add new endpoint for user authentication`

@@ -5,11 +5,13 @@ This repository demonstrates how to use [Playwright](https://playwright.dev/) wi
 ## About This Example
 
 This example shows how to:
+
 1. Connect to Kernel's remote browsers using Playwright
 2. Run simple web automations
 3. View and interact with the automation in real-time using Kernel's remote browser interface
 
 The demo script performs a simple automation that:
+
 - Navigates to Hacker News
 - Clicks on the comments link for the first story
 - Types "Hello world!" in the comment field
@@ -19,6 +21,7 @@ The demo script performs a simple automation that:
 Follow these steps to run the example:
 
 1. Create a `.env` file with your Kernel API key:
+
    ```bash
    cp .env.copy .env
    ```
@@ -28,11 +31,13 @@ Follow these steps to run the example:
    ```
 
 2. Install dependencies:
+
    ```
    npm install
    ```
 
 3. Run the example:
+
    ```
    npx tsx src/demo.ts
    ```
