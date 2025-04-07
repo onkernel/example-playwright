@@ -67,4 +67,4 @@ See the [LICENSE](./LICENSE) file for details.
 
 For issues, questions, or feedback, please [open an issue](https://github.com/onkernel/example-playwright/issues) on this repository.
 
-To learn more about our hosted services, visit [our docs](https://docs.onkernel.com/introduction) and request an API key on [Discord](https://discord.gg/Q6WPxeaj).
+To learn more about our hosted services, visit [our docs](https://docs.onkernel.com/introduction) and request an API key on [Discord](https://discord.gg/FBrveQRcud).
