@@ -8,7 +8,7 @@ on:
       - main
 
 jobs:
-  lint-frontend:
+  lint:
     runs-on: ubuntu-latest
 
     steps:
@@ -16,7 +16,7 @@ jobs:
 
       - name: Install packages
         run: npm install
-      - name: Run prettier
-        run: npm run format
       - name: Run eslint
         run: npm run lint
+      - name: Run prettier
+        run: npm run format:check

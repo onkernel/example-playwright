@@ -15,12 +15,6 @@ export default [
         sourceType: 'module',
         jsx: true,
       },
-      globals: {
-        console: 'readonly',
-        process: 'readonly',
-        fetch: 'readonly',
-        global: 'readonly',
-      },
     },
     plugins: {
       '@typescript-eslint': tseslint,
@@ -28,7 +22,12 @@ export default [
     rules: {
       '@typescript-eslint/explicit-function-return-type': 'warn',
       '@typescript-eslint/no-explicit-any': 'warn',
-      '@typescript-eslint/no-unused-vars': ['error', { argsIgnorePattern: '^_' }],
+      '@typescript-eslint/no-unused-vars': [
+        'error',
+        { argsIgnorePattern: '^_', varsIgnorePattern: '^_', ignoreRestSiblings: true },
+      ],
+      'no-unused-vars': 'off', // Turn off the base rule since we have the TS-specific one
+      'no-undef': 'off', // TypeScript will catch these errors instead
     },
   },
   prettierConfig,
