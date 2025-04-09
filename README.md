@@ -23,7 +23,7 @@ Follow these steps to run the example:
 1. Create a `.env` file with your Kernel API key:
 
    ```bash
-   cp .env.copy .env
+   cp .env.example .env
    ```
 
    ```
@@ -39,7 +39,7 @@ Follow these steps to run the example:
 3. Run the example:
 
    ```
-   npx tsx src/demo.ts
+   npm exec tsx src/demo.ts
    ```
 
 4. A Kernel URL will be displayed in the console. Open this URL in your browser to watch the automation run in real-time.
