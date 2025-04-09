@@ -1,9 +1,12 @@
-import { chromium } from 'playwright';
 import dotenv from 'dotenv';
+import { chromium, type Browser } from 'playwright';
 import readline from 'readline';
-import { type Browser } from 'playwright';
 
 dotenv.config();
+
+const KERNEL_API_BASE_URL =
+  process.env.KERNEL_API_BASE_URL || "https://api.onkernel.com";
+
 
 // Create readline interface for demo purposes
 const rl = readline.createInterface({
@@ -16,8 +19,7 @@ let browser: Browser | undefined;
 (async (): Promise<void> => {
   try {
     // https://docs.onkernel.com/api-reference/create-browser-session
-    const response = await fetch('https://api.onkernel.com/browser', {
-      method: 'POST',
+    const response = await fetch(`${KERNEL_API_BASE_URL}/browser`, {      method: 'POST',
       headers: {
         Authorization: `Bearer ${process.env.KERNEL_API_KEY}`,
       },
