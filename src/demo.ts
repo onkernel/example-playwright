@@ -4,9 +4,7 @@ import readline from 'readline';
 
 dotenv.config();
 
-const KERNEL_API_BASE_URL =
-  process.env.KERNEL_API_BASE_URL || "https://api.onkernel.com";
-
+const KERNEL_API_BASE_URL = process.env.KERNEL_API_BASE_URL || 'https://api.onkernel.com';
 
 // Create readline interface for demo purposes
 const rl = readline.createInterface({
@@ -19,7 +17,8 @@ let browser: Browser | undefined;
 (async (): Promise<void> => {
   try {
     // https://docs.onkernel.com/api-reference/create-browser-session
-    const response = await fetch(`${KERNEL_API_BASE_URL}/browser`, {      method: 'POST',
+    const response = await fetch(`${KERNEL_API_BASE_URL}/browser`, {
+      method: 'POST',
       headers: {
         Authorization: `Bearer ${process.env.KERNEL_API_KEY}`,
       },
